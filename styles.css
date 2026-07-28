@@ -1,0 +1,2594 @@
+:root {
+    --bg-color: #FAF9F6;
+    --text-color: #111827;
+    --accent: #f8387e;
+    --card-bg: #3b1e27;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#portfolio-text{
+    color: black;
+    text-decoration: none;
+}
+/* This will strictly apply to the landing page description */
+.manifesto {
+    max-width: 850px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+/* Global Typography & Base Styles */
+body {
+    font-family: 'Karla', sans-serif; /* Clean font for paragraph text */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 60px; /* Leave space for the fixed nav bar */
+}
+
+h1, h2, h3, .logo, .btn {
+    font-family: 'Montserrat', sans-serif; /* Bold font for headings & buttons */
+    font-weight: 700;
+}
+
+
+
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .highlight {
+    color: var(--accent);
+    transition: text-shadow 0.3s ease, color 0.3s ease;
+}
+/* Your existing base styling for the pink name */
+.hero .highlight {
+  color: #ff3366; /* Your current pink hex code */
+  display: inline-block; 
+  transition: text-shadow 0.35s ease, color 0.35s ease;
+  cursor: default;
+}
+
+/* The smooth neon pink-to-gold radiant glow */
+.hero .highlight:hover {
+  /* Keeps the core text a crisp, brilliant sun-kissed white */
+  color: #ffffff; 
+  
+  /* Blends smoothly from a dense pink anchor directly into a golden aura */
+  text-shadow: 
+    0 0 6px #ff3366,                    /* Tight neon-pink anchor (replaces the dark border) */
+    0 0 12px rgba(255, 215, 0, 0.95),   /* Mid-range vibrant gold bleed */
+    0 0 28px rgba(255, 165, 0, 0.6);    /* Wide, atmospheric warm amber sunset glow */
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+/* Custom Interactive Button */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Projects Grid Layout */
+.project-section {
+    padding: 5rem 10%;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Project Cards using your --card-bg */
+.card {
+    background-color: var(--card-bg);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #d1d5db;
+    font-size: 0.9rem;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+/* Floating Contact Tab Capsule Styles */
+.contact-tab-capsule {
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    background-color: var(--card-bg); /* Uses your dark berry theme color */
+    border: 2px solid var(--accent);  /* Adds your pink accent border line */
+    padding: 0.6rem 1.8rem;
+    border-radius: 50px;              /* Creates the smooth pill capsule shape */
+    margin: 0.5rem 0 2rem 0;          /* Adds balanced vertical spacing */
+    box-shadow: 0 8px 24px rgba(248, 56, 126, 0.15); /* Soft pink ambient glow shadow */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.contact-tab-capsule:hover {
+    transform: translateY(-2px);      /* Gives it a light floating lift on hover */
+    box-shadow: 0 12px 28px rgba(248, 56, 126, 0.25);
+}
+
+/* Links inside the floating tab */
+.tab-link {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: #ffffff;                  /* Hardcoded to clean contrast white */
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.tab-link:hover {
+    color: var(--accent);            /* Pops pink when you point at it */
+}
+
+/* Vertical text dividers inside the pill */
+.tab-divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.9rem;
+    pointer-events: none;
+}
+
+/* ==========================================================================
+   PROJECTS PAGE: FULL-SCREEN CAROUSEL STYLES
+   ========================================================================== */
+/* 1. Locks the viewport to prevent dual scrollbars */
+
+
+/* 7. Responsive stack layout for mobile viewports */
+@media (max-width: 900px) {
+    .projects-page {
+        overflow-y: auto; /* Fallback allow layout scrolling if stacked fields spill */
+    }
+    .projects-page .project-square {
+        flex-direction: column; 
+    }
+    .projects-page .square-media {
+        height: 45%;
+        padding: 1.5rem;
+    }
+    .projects-page .square-content {
+        height: 55%;
+        padding: 2.5rem;
+        align-items: center;
+        text-align: center;
+        justify-content: flex-start;
+    }
+    .projects-page .square-content h2 {
+        font-size: 2rem;
+    }
+    .projects-page .slide-arrow {
+        top: 22.5%; /* Keeps arrow control layout dead-centered directly over graphic image window */
+    }
+    .projects-page .prev-arrow { left: 15px; }
+    .projects-page .next-arrow { right: 15px; }
+}
+
+/* Styles for real images inside the carousel */
+.projects-page .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Keeps image aspect ratio perfect while filling the space */
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); /* Adds depth to the game screen */
+}
+
+/* ==========================================================================
+   INDIVIDUAL PROJECT CASE STUDY STYLES
+   ========================================================================== */
+
+.detail-page {
+    background-color: var(--bg-color);
+    overflow-y: auto; /* Re-enables natural page scrolling */
+}
+
+/* Master container constraint */
+.case-study-container {
+    max-width: 1100px;
+    margin: 5rem auto;
+    padding: 0 2rem;
+}
+
+/* Title Header Elements */
+.case-study-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.case-study-header h1 {
+    font-size: 3.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.project-meta-tags {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.95rem;
+}
+
+.project-tagline {
+    font-size: 1.2rem;
+    color: #4b5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Big Showcase Main Image Frame */
+.case-study-hero-media {
+    width: 100%;
+    height: 500px;
+    background-color: var(--card-bg);
+    border-radius: 16px;
+    margin-bottom: 4rem;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.case-study-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Interactive Column Breakdown Grid */
+.case-study-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* Text gets 2 shares, info card gets 1 share */
+    gap: 4rem;
+    align-items: start;
+}
+
+/* Writeup Text Blocks styling */
+.case-study-main h2 {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin: 2.5rem 0 1rem 0;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+    padding-bottom: 0.5rem;
+}
+
+.case-study-main p {
+    font-size: 1.1rem;
+    color: #374151;
+    margin-bottom: 1.5rem;
+}
+
+.challenge-block {
+    background-color: rgba(0, 0, 0, 0.02);
+    border-left: 4px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 0 8px 8px 0;
+    margin-bottom: 2rem;
+}
+
+.challenge-block h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+/* Sticky Specifications Card (Right Sidebar) */
+.case-study-sidebar {
+    position: sticky;
+    top: 100px; /* Locks card relative to screen viewport upon scroll */
+}
+
+.meta-card {
+    /* background-color: var(--card-bg); */
+    /* color: #ffffff; */
+        background: #3b1e27 !important;          /* Direct Hex value for Berry Pink */
+    background-color: #3b1e27 !important;    /* Double-forced entry fallback */
+    
+    color: #f3f4f6 !important;   
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.meta-card h3 {
+    font-size: 1.4rem;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.meta-item {
+    margin-bottom: 1.25rem;
+}
+
+.meta-item h4 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: var(--accent);
+    letter-spacing: 1px;
+    margin-bottom: 0.25rem;
+}
+
+.meta-item p {
+    font-size: 1rem;
+    color: #e5e7eb;
+}
+
+/* Mobile responsive layout shifts */
+@media (max-width: 850px) {
+    .case-study-grid {
+        grid-template-columns: 1fr; /* Collapses sidebar below main copy fields */
+        gap: 3rem;
+    }
+    .case-study-sidebar {
+        position: relative;
+        top: 0;
+    }
+    .case-study-header h1 {
+        font-size: 2.5rem;
+    }
+    .case-study-hero-media {
+        height: 300px;
+    }
+}
+
+/* 1. Push the award box further away from the text below it */
+.case-study-header .award {
+    margin-bottom: 3.5rem !important; 
+}
+
+/* 2. Bring the tech stack sub-tag down closer to the title heading */
+.case-study-header .project-meta-tags {
+    margin-bottom: 0.25rem !important;
+}
+
+/* 3. Ensure the title heading text sits tightly up against the tag above it */
+.case-study-header h1 {
+    margin-top: 0 !important;
+    line-height: 1.1;
+}
+
+
+/* ==========================================================================
+   BENTO GRID ABOUT ME LAYOUT
+   ========================================================================== */
+
+/* 1. Global Page Setup */
+.about-page {
+    color: #f3f4f6;
+    overflow-y: auto;
+}
+
+/* 2. Grid Container Setup */
+.bento-container {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr; /* Strict 3-column split */
+    gap: 1.5rem;
+    max-width: 1250px;
+    margin: 6rem auto;
+    padding: 0 2rem;
+}
+
+/* 3. Base Bento Panel Card */
+.bento-box {
+    background-color: var(--card-bg); /* Your deep burgundy #3b1e27 */
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px; /* Curved edge boxes */
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Strict Box Placements */
+.profile-card {
+    grid-column: 1;
+    grid-row: 1;
+    background-color: #1a1517; /* Dark framing block */
+}
+
+.bio-card {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.pink-glow {
+    border-color: rgba(248, 56, 126, 0.2);
+    box-shadow: 0 15px 40px rgba(248, 56, 126, 0.05);
+}
+
+.toolkit-card {
+    grid-column: 3;
+    grid-row: 1 / span 2; 
+}
+
+.experience-card {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+/* Pink Curved Edge Section */
+.specialty-card {
+    grid-column: 1;
+    grid-row: 2;
+    background-color: var(--accent); /* Your vivid pink #f8387e */
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 15px 35px rgba(248, 56, 126, 0.2);
+}
+
+/* 5. Typography Content Tweaks */
+.bento-box h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.bento-box h3 {
+    font-size: 1.4rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--accent);
+    margin-bottom: 1.5rem;
+}
+
+.specialty-card h3 {
+    color: #ffffff; /* Contrast tweak for pink box */
+}
+
+.bento-box p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #d1d5db;
+    margin-bottom: 1rem;
+}
+
+.bento-box .lead {
+    font-size: 1.15rem;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+/* Photo and Header Layout elements */
+.profile-photo-placeholder {
+    width: 100%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 16px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+}
+
+.profile-card h1 {
+    font-size: 2.2rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+}
+
+.location-tag {
+    font-size: 0.9rem !important;
+    color: #9ca3af !important;
+    margin: 0;
+}
+
+/* Technical Toolkit formatting */
+.tool-group {
+    margin-bottom: 1.5rem;
+}
+
+.tool-group h4 {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+}
+
+.tool-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tool-group li {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin-bottom: 0.35rem;
+    padding-left: 0.75rem;
+    border-left: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+/* CV History Timeline Styles */
+.timeline-list {
+    list-style: none;
+    padding: 0;
+}
+
+.timeline-list li {
+    margin-bottom: 1.5rem;
+}
+
+.timeline-list strong {
+    color: #ffffff;
+    font-size: 1.05rem;
+    display: block;
+}
+
+.timeline-date {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--accent);
+    display: block;
+    margin-top: 0.1rem;
+    margin-bottom: 0.25rem;
+}
+
+.timeline-list p {
+    font-size: 0.95rem;
+    color: #9ca3af;
+    margin: 0;
+}
+
+/* Education and Pills in Pink Box */
+.education-meta {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1rem;
+}
+
+.education-meta p {
+    color: #ffffff !important;
+    margin-bottom: 0.75rem;
+    font-size: 0.95rem;
+}
+
+.specialty-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+
+.specialty-tags span {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 6. Tablet & Desktop Responsive Scaling */
+@media (max-width: 1100px) {
+    .bento-container {
+        grid-template-columns: 1fr 1fr; /* Switch to 2 columns */
+    }
+    .profile-card { grid-column: 1; grid-row: 1; }
+    .bio-card { grid-column: 2; grid-row: 1; }
+    .toolkit-card { grid-column: 2; grid-row: 2 / span 2; }
+    .experience-card { grid-column: 1; grid-row: 2; }
+    .specialty-card { grid-column: 1; grid-row: 3; }
+}
+
+/* 7. Mobile Phone Linear Stack fallback */
+@media (max-width: 750px) {
+    .bento-container {
+        grid-template-columns: 1fr; /* Drop into 1 single vertical column line */
+        margin: 2rem auto;
+    }
+    .profile-card, .bio-card, .toolkit-card, .experience-card, .specialty-card {
+        grid-column: 1 !important;
+        grid-row: auto !important;
+    }
+    .profile-photo-placeholder {
+        height: 250px;
+    }
+}
+
+/* ==========================================================================
+   STAGGERED REVEAL ENTRANCE ANIMATION
+   ========================================================================== */
+
+/* 1. Base rule: Sets initial invisible state and applies the animation */
+.bento-box {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: cardEntrance 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* 2. Custom delay steps: Targets your exact HTML classes to cascade the entrance */
+.profile-card { animation-delay: 0.2s; }
+.bio-card { animation-delay: 0.4s; }
+.toolkit-card { animation-delay: 0.6s; }
+.experience-card { animation-delay: 0.8s; }
+.specialty-card { animation-delay: 1.0s; }
+
+/* 3. Keyframe execution: Smoothly transitions elements up and visible */
+@keyframes cardEntrance {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Forces the new image tag to act exactly like your old placeholder box */
+.card .card-image {
+    width: 100%;
+    height: 200px; /* Locks the exact height of the previous placeholder */
+    object-fit: cover; /* Chops off image edges instead of stretching or squishing them */
+    object-position: center; /* Keeps the dead center of your game capture focused */
+    border-radius: 8px; /* Preserves the matching edge curves */
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* ==========================================================================
+   UX FOCUS SECTION STYLES
+   ========================================================================== */
+
+.ux-case-study-fullwidth {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.ux-case-study-fullwidth h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.ux-intro {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin-bottom: 3rem;
+    color: #4b5563;
+}
+
+.ux-process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.ux-step h3 {
+    font-size: 1.25rem;
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+}
+
+.ux-step p {
+    font-size: 0.95rem;
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* ==========================================================================
+   PROJECT AIMS SIDEBAR CARD
+   ========================================================================== */
+
+.project-aims-card {
+    margin-top: 1.5rem; /* Separates it from the Project Details card */
+}
+
+.aim-item {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1.25rem;
+    align-items: flex-start;
+}
+
+.aim-number {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1.1rem;
+    line-height: 1.2;
+}
+
+.aim-item h4 {
+    font-size: 0.95rem;
+    color: #ffffff;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+
+.aim-item p {
+    font-size: 0.85rem;
+    color: #d1d5db;
+    line-height: 1.5;
+}
+/* ==========================================================================
+   Reflection & Further Development Stylesheet Injection (Cream/Pink Theme)
+   ========================================================================== */
+
+.reflection-section-fullwidth {
+    margin-top: 5rem;
+    padding-top: 4rem;
+    border-top: 2px solid #f2e6e6; /* Soft warm tinted divider */
+}
+
+.reflection-section-fullwidth h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #0b1a30; /* Your deep dark blue/black heading color */
+    margin-bottom: 1rem;
+}
+
+.reflection-intro {
+    font-family: 'Karla', sans-serif;
+    font-size: 1.1rem;
+    color: #505c6e; /* Muted dark slate for body intro */
+    max-width: 850px;
+    margin-bottom: 3rem;
+    line-height: 1.6;
+}
+
+.reflection-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Card layout matching the sidebar block style */
+.reflection-card {
+    background-color: #2d1b24; /* Deep plum/dark block color matching your sidebar */
+    border-radius: 12px;
+    padding: 2.2rem;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.reflection-card:hover {
+    transform: translateY(-4px);
+}
+
+.reflection-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1rem;
+}
+
+/* Bright pink labels matching your UX headings */
+.aim-reference {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #ff4a8b; /* Vibrant Pink accent */
+}
+
+.reflection-meta h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #ffffff; /* Crisp white for headings inside dark cards */
+    margin: 0;
+}
+
+.reflection-body {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.98rem;
+    line-height: 1.65;
+    color: #f5e6eb; /* Soft light pinkish-white text inside dark cards */
+}
+
+.status-critique {
+    margin-bottom: 1.5rem;
+}
+
+.status-critique strong {
+    color: #ff4a8b; /* Highlight 'The Reality Check' in Pink */
+}
+
+.future-fix strong {
+    color: #ffffff; /* Highlight 'Further Development' in bold white */
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+    .reflection-grid {
+        grid-template-columns: 1fr;
+    }
+    .reflection-section-fullwidth {
+        margin-top: 3rem;
+        padding-top: 2rem;
+    }
+}
+.portfolio-carousel-container {
+    margin-top: 4rem;
+    margin-bottom: 2rem;
+}
+
+.horizontal-scroll-gallery {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-bottom: 1.5rem;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Base Card Container */
+.gallery-card {
+    flex: 0 0 340px;
+    background-color: #2d1b24; /* Your signature deep plum/burgundy block */
+    border-radius: 12px;
+    padding: 1.2rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image Wrapper sets the clipping boundary for the hover overlay */
+.gallery-image-wrapper {
+    position: relative;
+    width: 100%;
+    height: 220px;
+    border-radius: 6px;
+    overflow: hidden; /* Important: keeps the overlay inside the card shape */
+}
+
+.gallery-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+/* --- THE HOVER OVERLAY LAYER --- */
+.image-hover-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(45, 27, 36, 0.95); /* Semi-transparent matching plum */
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.3s ease;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem;
+    box-sizing: border-box;
+}
+
+/* Slide up animation details for text inside the overlay */
+.overlay-text {
+    transform: translateY(15px);
+    transition: transform 0.35s ease;
+    font-family: 'Karla', sans-serif;
+    overflow-y: auto; /* Adds a minor scrollbar inside the image frame if your text runs long */
+    max-height: 100%;
+}
+
+/* Bright Pink Subheadings inside the hover overlay */
+.overlay-text h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ff4a8b; /* Your signature accent pink */
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 0.3rem 0;
+}
+
+.overlay-text p {
+    color: #f5e6eb; /* Soft off-white text */
+    font-size: 0.88rem;
+    line-height: 1.4;
+    margin: 0 0 1rem 0;
+}
+
+.overlay-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- HOVER ACTIONS --- */
+.gallery-card:hover .image-hover-overlay {
+    opacity: 1; /* Fade the plum screen in */
+}
+
+.gallery-card:hover .overlay-text {
+    transform: translateY(0); /* Slide the text gently up to its true position */
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05); /* Slight dynamic zoom on the background image */
+    filter: blur(2px);
+}
+
+/* Static Caption Below Image Box */
+.card-caption {
+    font-family: 'Karla', sans-serif;
+    font-size: 0.9rem;
+    color: #f5e6eb;
+    margin-top: 1rem;
+    margin-bottom: 0;
+    line-height: 1.4;
+}
+
+/* Custom Scrollbar styling for horizontal track */
+.horizontal-scroll-gallery::-webkit-scrollbar {
+    height: 8px;
+}
+.horizontal-scroll-gallery::-webkit-scrollbar-track {
+    background: #f2e6e6;
+    border-radius: 10px;
+}
+.horizontal-scroll-gallery::-webkit-scrollbar-thumb {
+    background: #ff4a8b;
+    border-radius: 10px;
+}
+.horizontal-scroll-gallery::-webkit-scrollbar-thumb:hover {
+    background: #d4356f;
+}
+
+/* adding mouse interaction details here*/
+.sparkle-particle {
+  position: absolute;
+  background: #ff007f; /* Matching your signature hot pink */
+  pointer-events: none; /* Stops it from blocking clicks */
+  z-index: 9999;
+  /* Use a clip-path to draw a cutesy 4-pointed diamond star shape! */
+  clip-path: polygon(50% 0%, 65% 35%, 100% 50%, 65% 65%, 50% 100%, 35% 65%, 0% 50%, 35% 35%);
+  animation: sparkleTwinkle 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes sparkleTwinkle {
+  0% {
+    transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    /* Explodes outwards slightly while spinning and fading out gracefully */
+    transform: translate(-50%, -50%) scale(1.5) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+
+:root {
+    --bg-color: #FAF9F6;
+    --text-color: #111827;
+    --accent: #f8387e;
+    --card-bg: #3b1e27;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#portfolio-text{
+    color: black;
+    text-decoration: none;
+}
+
+/* Global Typography & Base Styles */
+body {
+    font-family: 'Karla', sans-serif; /* Clean font for paragraph text */
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    padding-top: 60px; /* Leave space for the fixed nav bar */
+}
+
+h1, h2, h3, .logo, .btn {
+    font-family: 'Montserrat', sans-serif; /* Bold font for headings & buttons */
+    font-weight: 700;
+}
+
+/* Navigation Bar */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 10%;
+    background-color: var(--bg-color);
+    z-index: 1000;
+}
+
+nav .logo {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul a:hover {
+    color: var(--accent);
+}
+
+/* Hero Section */
+.hero {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero .highlight {
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #4b5563;
+    margin-bottom: 2rem;
+}
+
+/* Custom Interactive Button */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* Projects Grid Layout */
+.project-section {
+    padding: 5rem 10%;
+}
+
+.project-section h2 {
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+}
+
+/* Project Cards using your --card-bg */
+.card {
+    background-color: var(--card-bg);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card .placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.card p {
+    color: #d1d5db;
+    font-size: 0.9rem;
+}
+
+/* Footer Section */
+footer {
+    text-align: center;
+    padding: 3rem 1rem;
+    font-size: 0.9rem;
+    color: #6b7280;
+}
+
+
+/*for projects page*/
+
+/* ==========================================================================
+   PROJECTS PAGE: FULL-SCREEN CAROUSEL STYLES
+   ========================================================================== */
+
+/* 1. Locks the viewport to prevent dual scrollbars */
+.projects-page {
+    overflow: hidden; 
+}
+
+.award {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    
+    /* Elegant theme colors */
+    color: var(--accent); 
+    background-color: rgba(248, 56, 126, 0.08); /* Translucent pink fill */
+    
+    /* Border Flourish */
+    border-left: 3px solid var(--accent); /* Clean accent line on the left edge */
+    
+    /* Layout positioning */
+    padding: 0.5rem 1.2rem 0.5rem 1rem;
+    border-radius: 0 6px 6px 0; /* Smooth rounded corners only on the right side */
+    margin-bottom: 1.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; /* Leaves space between the icon and your text */
+    
+    /* Subtle neon border glow */
+    box-shadow: 0 4px 12px rgba(248, 56, 126, 0.15);
+}
+
+/* Icon rotation effect on card hover */
+.project-square:hover .award-icon {
+    transform: rotate(15deg) scale(1.1);
+}
+
+.award-icon {
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+}
+
+
+/* 2. Container sizing to drop cleanly below your 60px nav bar */
+.fullscreen-slider-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 60px); 
+    background-color: var(--bg-color);
+}
+
+.projects-page .slider-track {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+
+
+/* 3. Sliding full-screen project cards (media left, info right) */
+.projects-page .project-square {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row; 
+    background-color: var(--bg-color);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.projects-page .project-square.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* 4. Media container side (Left) utilizing your dark --card-bg */
+.projects-page .square-media {
+    flex: 1.2;
+    height: 100%;
+    background-color: var(--card-bg);
+    padding: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.projects-page .placeholder {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+}
+
+/* 5. Content text details side (Right) */
+.projects-page .square-content {
+    flex: 1;
+    height: 100%;
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+}
+
+.projects-page .square-content h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.projects-page .tech-stack {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.projects-page .summary {
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
+    max-width: 500px;
+    color: #4b5563;
+}
+
+/* 6. Carousel arrow navigation overlay buttons */
+.projects-page .slide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.projects-page .slide-arrow:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+.projects-page .prev-arrow { left: 30px; }
+.projects-page .next-arrow { right: 30px; }
+
+/* Styles for real images inside the carousel */
+.projects-page .slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    border-radius: 8px;
+}
+
+/* Responsive stack layout for mobile viewports */
+@media (max-width: 900px) {
+    .projects-page {
+        overflow-y: auto; /* Fallback allow layout scrolling if stacked fields spill */
+    }
+    .projects-page .project-square {
+        flex-direction: column; 
+    }
+    .projects-page .square-media {
+        height: 45%;
+        padding: 1.5rem;
+    }
+    .projects-page .square-content {
+        height: 55%;
+        padding: 2.5rem;
+        align-items: center;
+        text-align: center;
+        justify-content: flex-start;
+    }
+    .projects-page .square-content h2 {
+        font-size: 2rem;
+    }
+    .projects-page .slide-arrow {
+        top: 22.5%; /* Keeps arrow control layout dead-centered directly over graphic image window */
+    }
+    .projects-page .prev-arrow { left: 15px; }
+    .projects-page .next-arrow { right: 15px; }
+}
+
+/* ==========================================================================
+   FLOATING VIEWPORT LAYOUT TOGGLE
+   ========================================================================== */
+
+.layout-controls-floating {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 9999; /* Ensures it floats over absolutely everything */
+}
+
+.floating-toggle-btn {
+    background-color: var(--text-color); /* Elegant dark charcoal/black pill */
+    color: var(--bg-color); /* Light off-white text */
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.floating-toggle-btn:hover {
+    background-color: var(--accent); /* Smooth shift to pink on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(248, 56, 126, 0.3);
+}
+
+.floating-toggle-btn .btn-icon {
+    font-size: 1rem;
+    transition: transform 0.3s ease;
+}
+
+/* Change icon style slightly when active */
+.floating-toggle-btn.active-view .btn-icon {
+    transform: rotate(90deg);
+}
+
+/* ==========================================================================
+   INDEPENDENT BOTTOM UTILITY BAR
+   ========================================================================== */
+
+/* The fixed container bar */
+.grid-utility-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background-color: var(--bg-color); /* Matches your creamy off-white canvas */
+    border-top: 1px solid rgba(0, 0, 0, 0.06); /* Subtle, elegant separator line */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999; /* Forces it to remain visible above all slider layers and scripts */
+}
+
+/* The minimalist text toggle button */
+.utility-toggle-btn {
+    background: transparent;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #777; /* Subtle clean grey */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    transition: color 0.2s ease;
+}
+
+.utility-toggle-btn:hover {
+    color: var(--accent); /* Shifts to your signature pink on hover */
+}
+
+.utility-toggle-btn .toggle-icon {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+/* Add a tiny bit of breathing room to the grid wrapper so it doesn't clip behind the bar */
+body.grid-mode .fullscreen-slider-container {
+    margin-bottom: 120px !important;
+}
+/* ==========================================================================
+   PURE-CSS SIDE-BY-SIDE TWO COLUMN LAYOUT (UNIFORM MATCHING SIZES)
+   ========================================================================== */
+
+/* 1. RESET VIEWPORT CONTROLS */
+body.grid-mode {
+    overflow-y: auto !important; 
+    background-color: var(--bg-color);
+}
+
+body.grid-mode .fullscreen-slider-container {
+    max-width: 1200px !important;
+    margin: 4rem auto 10rem auto !important;
+    padding: 0 1.5rem !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+body.grid-mode .slide-arrow {
+    display: none !important; /* Hides navigational slider arrows */
+}
+
+body.grid-mode .fullscreen-slider-container {
+    margin-bottom: 120px !important; /* Clear vertical buffer above utility bottom bar */
+}
+
+/* 2. SYMMETRICAL TWO-COLUMN GRID ENGINE */
+body.grid-mode .slider-track {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important; /* Perfect side-by-side split layout */
+    gap: 2.5rem !important; /* Generous breathing room between columns */
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+}
+
+/* 3. CARD STRUCTURAL MODIFIERS */
+body.grid-mode .project-square {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important; /* Image on top, text elements neatly stacked below */
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+    
+    /* FIX: Force an absolute matching height footprint on ALL grid cards */
+    height: 520px !important; 
+    
+    border-radius: 12px !important; /* Elegant rounded square corners */
+    overflow: hidden !important;
+    padding: 1.75rem !important;
+    transform: none !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+}
+
+body.grid-mode .project-square:hover {
+    transform: translateY(-4px) !important;
+}
+
+/* 4. PINK PALETTE COLOR ROTATION (Alternates pairs evenly across matching side-by-side rows) */
+/* Row 1 & 4 Pairs: Your custom deep charcoal/maroon (--card-bg) */
+body.grid-mode .project-square:nth-child(1),
+body.grid-mode .project-square:nth-child(2),
+body.grid-mode .project-square:nth-child(7),
+body.grid-mode .project-square:nth-child(8) {
+    background-color: var(--card-bg) !important;
+    color: #ffffff !important;
+}
+body.grid-mode .project-square:nth-child(1) h2, body.grid-mode .project-square:nth-child(2) h2, body.grid-mode .project-square:nth-child(7) h2, body.grid-mode .project-square:nth-child(8) h2,
+body.grid-mode .project-square:nth-child(1) .summary, body.grid-mode .project-square:nth-child(2) .summary, body.grid-mode .project-square:nth-child(7) .summary, body.grid-mode .project-square:nth-child(8) .summary {
+    color: #ffffff !important;
+}
+
+/* Row 2 Pairs: Your signature rich hot pink accent (--accent) */
+body.grid-mode .project-square:nth-child(3),
+body.grid-mode .project-square:nth-child(4) {
+    background-color: var(--accent) !important;
+    color: #ffffff !important;
+}
+body.grid-mode .project-square:nth-child(3) h2, body.grid-mode .project-square:nth-child(4) h2,
+body.grid-mode .project-square:nth-child(3) .summary, body.grid-mode .project-square:nth-child(4) .summary {
+    color: #ffffff !important;
+}
+body.grid-mode .project-square:nth-child(3) .tech-stack, body.grid-mode .project-square:nth-child(4) .tech-stack {
+    color: #ffdce7 !important; /* Soft high-contrast text overlay */
+}
+
+/* Row 3 Pairs: Soft pastel light rose pink tint */
+body.grid-mode .project-square:nth-child(5),
+body.grid-mode .project-square:nth-child(6) {
+    background-color: #fbe6ed !important; 
+    color: var(--text-color) !important;
+}
+body.grid-mode .project-square:nth-child(5) .summary, body.grid-mode .project-square:nth-child(6) .summary {
+    color: #4b5563 !important;
+}
+
+/* 5. PERFECTLY ALIGNED IMAGE THUMBNAILS */
+body.grid-mode .square-media {
+    width: 100% !important;
+    height: 220px !important; /* Absolute height locks all side-by-side previews into identical size uniformity */
+    padding: 0 !important;
+    background-color: transparent !important;
+    margin-bottom: 1.25rem !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    flex-shrink: 0 !important;
+}
+
+body.grid-mode .slider-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important; /* Editorial cropping matches dimensions seamlessly without warping pixel artwork */
+}
+
+/* 6. INNER CARD TEXT ELEMENTS FORMATTING */
+body.grid-mode .square-content {
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-grow: 1 !important;
+}
+
+body.grid-mode .square-content h2 {
+    font-size: 1.4rem !important;
+    line-height: 1.25 !important;
+    margin-bottom: 0.3rem !important;
+}
+
+body.grid-mode .award {
+    font-size: 0.7rem !important;
+    padding: 0.3rem 0.6rem !important;
+    margin-bottom: 0.5rem !important;
+    align-self: flex-start !important;
+}
+
+body.grid-mode .tech-stack {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.5rem !important;
+    white-space: nowrap !important; /* Keeps technology lines on a crisp single row */
+    overflow: hidden !important;
+    text-overflow: ellipsis !important; /* Adds subtle dot format if line overflows */
+    width: 100% !important;
+}
+
+body.grid-mode .summary {
+    font-size: 0.95rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 1.5rem !important;
+    
+    /* FIX: Cap text descriptions to exactly three uniform visual text lines */
+    display: -webkit-box !important;
+    -webkit-line-clamp: 3 !important;
+    -webkit-box-orient: vertical !important;
+    overflow: hidden !important;
+    height: 4.35em !important; /* Hard constraint prevents background panel variance */
+}
+
+/* Embedded action link button settings */
+body.grid-mode .square-content .btn {
+    margin-top: auto !important; /* Automatically anchors buttons flat along card bottom bounds */
+    align-self: flex-start !important;
+    padding: 0.5rem 1.4rem !important;
+    font-size: 0.8rem !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: inherit !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 6px !important;
+}
+
+body.grid-mode .project-square:nth-child(5) .btn,
+body.grid-mode .project-square:nth-child(6) .btn {
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 850px) {
+    body.grid-mode .slider-track {
+        grid-template-columns: 1fr !important; /* Converts seamlessly to a clean 1-column magazine layout on mobile */
+        row-gap: 2.5rem !important;
+    }
+    body.grid-mode .project-square {
+        height: auto !important; /* Let cards grow naturally on small vertical viewports */
+    }
+    body.grid-mode .summary {
+        height: auto !important;
+        -webkit-line-clamp: unset !important;
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 850px) {
+    body.grid-mode .slider-track {
+        grid-template-columns: 1fr !important; /* Converts seamlessly to a clean 1-column magazine layout on mobile */
+        row-gap: 2.5rem !important;
+    }
+    
+    body.grid-mode .project-square {
+        height: auto !important; /* Let cards grow naturally on small vertical viewports */
+        text-align: center !important; /* Centers the headings, tech stacks, and texts */
+    }
+    
+    body.grid-mode .summary {
+        height: auto !important;
+        -webkit-line-clamp: unset !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* NEW MOBILE ALIGNMENT OVERRIDES */
+    body.grid-mode .square-content {
+        align-items: center !important; /* Forces inner flex elements to center up */
+    }
+
+    body.grid-mode .award {
+        align-self: center !important; /* Pulls the award badges to the absolute center */
+    }
+
+    body.grid-mode .square-content .btn {
+        margin: 0.5rem auto 0 auto !important; /* Overrides the baseline push, placing the button perfectly centered */
+        align-self: center !important; 
+    }
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT BREAKPOINTS
+   ========================================================================== */
+@media (max-width: 850px) {
+    body.grid-mode .slider-track {
+        grid-template-columns: 1fr !important; /* Converts seamlessly to a clean 1-column magazine layout on mobile */
+        row-gap: 2.5rem !important;
+    }
+    
+    body.grid-mode .project-square {
+        height: auto !important; /* Let cards grow naturally on small vertical viewports */
+        text-align: center !important; /* Centers the headings, tech stacks, and texts */
+    }
+    
+    body.grid-mode .summary {
+        height: auto !important;
+        -webkit-line-clamp: unset !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    body.grid-mode .square-content {
+        align-items: center !important; /* Forces inner flex elements to center up */
+    }
+
+    body.grid-mode .square-content .btn {
+        margin: 0.5rem auto 0 auto !important; /* Overrides the baseline push, placing the button perfectly centered */
+        align-self: center !important; 
+    }
+
+    /* NEW SPECIFIC PHONE OVERRIDE FOR THE STARS SHIFT */
+    .award {
+        flex-direction: column !important; /* Stacks the stars vertically above the text */
+        align-self: center !important; /* Centers the whole badge in the middle of the card */
+        align-items: center !important;
+        text-align: center !important;
+        gap: 0.4rem !important; /* perfect breathing room between stars and your headline */
+        padding: 0.8rem 1.2rem !important; /* Balanced layout breathing room inside the box */
+        border-radius: 6px !important; /* Fully rounds all corners since it is centered now */
+        border-left: none !important; /* Removes the flat left edge stripe look for mobile */
+        width: auto !important; /* Lets the width hug the content elegantly */
+    }
+}
+@media (max-width: 850px) {
+    /* ... Keep all your existing project-square, award, and button mobile code from before ... */
+
+    /* NEW SPECIFIC PHONE OVERRIDES FOR THE NAV BAR */
+    nav {
+        flex-direction: column !important; /* Stacks the logo box vertically directly over your menu links */
+        gap: 0.5rem !important; /* Perfect tight spacing between logo text and links */
+        padding: 1rem 5% !important; /* Compresses top navigation bar height on phone screens */
+        text-align: center !important;
+    }
+
+    nav .logo {
+        font-size: 1.1rem !important; /* Slightly sizes down the logo text footprint so it feels elegant */
+        margin-bottom: 0.2rem !important;
+    }
+
+    nav ul {
+        gap: 1.25rem !important; /* Tightens the gap between About, Projects, and Contact links */
+        justify-content: center !important;
+        width: 100% !important;
+    }
+}
+
+/* ==========================================================================
+   BULLETPROOF FLEX VIEWPORT MOBILE SYSTEM
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* 1. FORCE THE BODY TO REMAIN RIGIDLY SINGLE-SCREEN HEIGHT */
+    body:not(.grid-mode) {
+        /* overflow: hidden !important; */
+        height: 100vh !important;
+        padding-top: 0 !important; /* Clears your desktop padding overlap constraint */
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    /* 2. FORCE NAV TO OCCUPY ONLY ITS OWN NATURAL TEXT AREA SHAPE */
+    body:not(.grid-mode) nav {
+        position: relative !important; /* Removes desktop fixed overlap float positioning */
+        height: auto !important;
+        padding: 1rem 5% 0.5rem 5% !important;
+        flex-shrink: 0 !important; /* Prevents the text links from crunching upward */
+    }
+
+    /* 3. RE-SIZE MAIN SPACE TO OCCUPY REMAINING EXACT LIVE SCREEN AREA */
+    body:not(.grid-mode) .fullscreen-slider-container {
+        flex-grow: 1 !important;
+        height: auto !important;
+        width: 100% !important;
+        position: relative !important;
+        overflow: hidden !important;
+        margin-top: 0 !important;
+        padding-bottom: 50px !important; /* Perfectly reserves 50px for your bottom bar edge */
+    }
+
+    /* 4. KEEP TRACK CONTAINER PINNED PRECISELY TO ITS ACTIVE SLIDER ELEMENT */
+    body:not(.grid-mode) .slider-track {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    body:not(.grid-mode) .project-square {
+        position: absolute !important;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        flex-direction: column !important;
+        display: flex !important;
+        overflow: hidden !important; /* Stops entire project cards from scrolling natively downward */
+    }
+
+    /* 5. FORCE THE IMAGE FRAME TO OCCUPY A DYNAMIC UPPER BOX PROFILE AREA */
+    body:not(.grid-mode) .square-media {
+        width: 100% !important;
+        height: 25vh !important; /* Lock the frame height dimension to 25% of absolute screen verticality */
+        min-height: 160px !important; 
+        padding: 1rem !important; 
+        background-color: var(--card-bg) !important; 
+        flex-shrink: 0 !important; 
+    }
+
+    body:not(.grid-mode) .slider-image {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; 
+        border-radius: 8px !important;
+    }
+
+    /* 6. FORCE CONTENT CARD TEXT TO COMPRESS SO BUTTON IS PULLED UPWARDS */
+    body:not(.grid-mode) .square-content {
+        width: 100% !important;
+        flex-grow: 1 !important; /* Fills remaining open bottom viewport space area safely */
+        overflow-y: auto !important; /* IF descriptions overflow on small phones, ONLY text scrolls inside card box! */
+        padding: 1rem 1.25rem !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: space-between !important; /* Forces the layout to push the View Details button to the bottom */
+    }
+
+    body:not(.grid-mode) .square-content h2 {
+        font-size: 1.35rem !important; 
+        margin-bottom: 0.1rem !important;
+        line-height: 1.2 !important;
+    }
+
+    body:not(.grid-mode) .summary {
+        font-size: 0.85rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 0.75rem !important;
+        max-width: 400px !important;
+    }
+
+    /* 7. PIN CONTROLS TO THE ABSOLUTE CENTER BOUNDS OF DYNAMIC IMAGE FRAME LAYER */
+    body:not(.grid-mode) .slide-arrow {
+        top: 12.5vh !important; /* Positions arrow controls precisely dead center inside the image window area */
+        transform: translateY(-50%) scale(0.7) !important; 
+    }
+    body:not(.grid-mode) .prev-arrow { left: 10px !important; }
+    body:not(.grid-mode) .next-arrow { right: 10px !important; }
+}
+    /* 6. FORCE CONTENT CARD TEXT TO PACK COHESIVELY TOGETHER */
+    body:not(.grid-mode) .square-content {
+        width: 100% !important;
+        flex-grow: 1 !important; /* Fills remaining open bottom viewport space area safely */
+        overflow-y: auto !important; /* ONLY text scrolls internally if card bounds overflow */
+        padding: 1rem 1.25rem !important; 
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        text-align: center !important;
+        justify-content: center !important; /* CHANGED: Keeps elements closely grouped in the vertical center */
+    }
+
+    body:not(.grid-mode) .square-content h2 {
+        font-size: 1.35rem !important; 
+        margin-bottom: 0.25rem !important; /* Fixed tight padding */
+        line-height: 1.2 !important;
+    }
+
+    /* Target the tech stack line directly */
+    body:not(.grid-mode) .tech-stack {
+        font-size: 0.85rem !important;
+        margin-bottom: 1rem !important; /* Keeps it closely tucked under the heading title */
+    }
+
+    /* Target the award badge if it exists */
+    body:not(.grid-mode) .award {
+        margin-bottom: 1rem !important;
+    }
+
+    body:not(.grid-mode) .summary {
+        font-size: 0.85rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 1.25rem !important; /* Creates a clean, uniform gap right before the button */
+        max-width: 400px !important;
+    }
+
+    /* Target the action trigger button */
+    body:not(.grid-mode) .square-content .btn {
+        margin-top: 0 !important; /* Clears automatic structural spacing behaviors */
+        flex-shrink: 0 !important; /* Blocks button resizing bugs */
+    }
+
+
+    /* ==========================================================================
+   CASE STUDY SUB-PAGES: HIGH-END PHONE LAYOUT SYSTEM (ZERO HTML CHANGES)
+   ========================================================================== */
+@media (max-width: 900px) {
+    /* 1. Reset body locks to allow natural page scrolling */
+
+    /* 1. Remove the deep padding overlap on mobile viewports */
+    body.detail-page {
+        overflow-y: auto !important;
+        height: auto !important;
+        padding-top: 80px !important; /* Tightened from 110px to perfectly clear the navigation bar */
+    }
+
+    /* 2. Remove extra top margins pushing the main content downwards */
+    .case-study-container {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 1.5rem 5rem 1.5rem !important;
+        margin-top: 0 !important; /* Ensures the container sits right up against the navbar layer */
+    }
+
+    /* 3. Tighten the space around the title and award card details */
+    .case-study-header {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        margin-top: 0 !important; /* Erases any default vertical gap blocks */
+        margin-bottom: 1.5rem !important; /* Compresses space right above your main image */
+    }
+}
+
+    .case-study-header h1 {
+        font-size: 2.2rem !important;
+        line-height: 1.2 !important;
+        margin: 0.5rem 0 !important;
+    }
+
+    .project-meta-tags {
+        font-size: 0.9rem !important;
+        font-weight: 700 !important;
+        color: var(--accent);
+        margin-bottom: 0.5rem !important;
+    }
+
+    .project-tagline {
+        font-size: 1.05rem !important;
+        line-height: 1.5 !important;
+        color: #4b5563;
+        max-width: 500px !important;
+    }
+
+    /* 4. Fix the hero display image */
+    .case-study-hero-media {
+        width: 100% !important;
+        margin-bottom: 3rem !important;
+        border-radius: 12px !important;
+        overflow: hidden !important;
+    }
+
+    .case-study-img {
+        width: 100% !important;
+        height: auto !important;
+        object-fit: cover !important;
+    }
+
+    /* 5. BREAK GRID DOWN INTO SINGLE VERTICAL FEED STREAM */
+    .case-study-grid {
+        display: flex !important;
+        flex-direction: column !important; /* Stacks text content on top, aside specs at the bottom */
+        gap: 3.5rem !important;
+        width: 100% !important;
+    }
+
+    .case-study-main {
+        width: 100% !important;
+    }
+
+    .case-study-main h2 {
+        font-size: 1.6rem !important;
+        margin-top: 2rem !important;
+        margin-bottom: 1rem !important;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        padding-bottom: 0.5rem;
+    }
+
+    .case-study-main p {
+        font-size: 1rem !important;
+        line-height: 1.6 !important;
+        color: #374151;
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* 6. Formatting Technical Challenge Callouts */
+    .challenge-block {
+        background-color: rgba(0, 0, 0, 0.02);
+        padding: 1.5rem !important;
+        border-radius: 10px !important;
+        margin-bottom: 1.5rem !important;
+        border-left: 3px solid var(--card-bg);
+    }
+
+    .challenge-block h3 {
+        font-size: 1.15rem !important;
+        margin-bottom: 0.5rem !important;
+        color: var(--text-color);
+    }
+
+    /* 7. Turn Sidebar Panels into Clean Horizontal Row Modules */
+    .case-study-sidebar {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 2rem !important;
+    }
+
+    .meta-card {
+        width: 100% !important;
+        background-color: #ffffff !important;
+        border: 1px solid rgba(0, 0, 0, 0.05) !important;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02) !important;
+        border-radius: 14px !important;
+        padding: 1.75rem !important;
+    }
+
+    /* 8. Make the Asset Development Gallery touch scrollable */
+    .portfolio-carousel-container {
+        width: 100% !important;
+        margin-top: 4rem !important;
+    }
+
+    .portfolio-carousel-container h2 {
+        font-size: 1.5rem !important;
+        text-align: center !important;
+    }
+
+    .carousel-intro {
+        text-align: center !important;
+        font-size: 0.95rem !important;
+        margin-bottom: 1.5rem !important;
+    }
+
+    .horizontal-scroll-gallery {
+        display: flex !important;
+        overflow-x: auto !important; /* Allows users to swipe sideways through assets on mobile */
+        scroll-snap-type: x mandatory !important;
+        gap: 1.25rem !important;
+        padding-bottom: 1.5rem !important;
+        width: 100% !important;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .gallery-card {
+        flex: 0 0 290px !important; /* Locks width footprint so cards don't shrink horizontally */
+        scroll-snap-align: start !important;
+    }
+
+@media (max-width: 900px) {
+    /* ... keep your existing mobile styles above ... */
+
+    /* FIX: Cleans up the awkward dark frame block around your case study hero image */
+    .case-study-hero-media {
+        width: 100% !important;
+        height: auto !important; /* Lets the image control the height naturally */
+        background-color: transparent !important; /* Completely erases that dark maroon spill block underneath */
+        padding: 0 !important; /* Removes the heavy inner framing border gap */
+        margin-bottom: 2rem !important; /* Perfect breathing room before your text begins */
+        border-radius: 8px !important;
+        overflow: hidden !important;
+    }
+
+    /* Ensures the actual screenshot scales perfectly without any weird padding gaps */
+    .case-study-img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+        object-fit: contain !important; /* Shows your full uncropped 3D view render frame precisely */
+        border-radius: 8px !important;
+    }
+}
+@media (max-width: 900px) {
+    /* ... keep your other mobile settings above ... */
+
+    /* RESTORE ORIGINAL DARK MAROON BACKGROUND CARD SCHEME ON MOBILE */
+    .meta-card {
+        background-color: var(--card-bg) !important; /* Forces your original dark background back */
+        border: none !important;
+        padding: 1.75rem !important;
+        border-radius: 12px !important;
+        color: #ffffff !important; /* Changes the base text elements to high-contrast white */
+    }
+
+    /* Subheading labels (e.g. ROLE, TIMELINE) */
+    .meta-item h4 {
+        color: var(--accent) !important; /* Keeps your vivid accent hot pink */
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.85rem !important;
+        letter-spacing: 1px;
+        margin-bottom: 0.2rem !important;
+    }
+
+    /* Detail description paragraphs under headings inside the card */
+    .meta-item p {
+        color: #ffffff !important; /* Forces the description text to be fully white and clear */
+        font-size: 0.95rem !important;
+        margin-bottom: 1.25rem !important;
+    }
+
+    /* PROJECT AIMS CARD BACKGROUND RE-ALIGNMENT */
+    .project-aims-card {
+        background-color: var(--card-bg) !important; /* Forces your aims block to also match the dark maroon */
+    }
+
+    .project-aims-card h3 {
+        color: #ffffff !important; /* Bold header card title goes white */
+        margin-bottom: 1.5rem !important;
+    }
+
+    .aim-item {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 1rem !important;
+        margin-bottom: 1.25rem !important;
+        text-align: left !important;
+    }
+
+    /* 01, 02 numbers */
+    .aim-number {
+        color: var(--accent) !important; /* Vibrant pink numbers */
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 700;
+        font-size: 1.1rem !important;
+        flex-shrink: 0;
+    }
+
+    .aim-item h4 {
+        color: #ffffff !important; /* Aims list titles go crisp white */
+        font-size: 1rem !important;
+        margin-bottom: 0.2rem !important;
+    }
+
+    .aim-item p {
+        color: #e5e7eb !important; /* Soft, readable off-white for the body paragraphs */
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+    }
+}
+
+@media (max-width: 900px) {
+    /* ... keep your existing mobile styles above ... */
+
+    /* SWAP TITLE AND META TAG ORDER FOR MOBILE VIEW */
+    .case-study-header {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .case-study-header h1 {
+        order: 1 !important; /* Forces the main project title to sit at the top */
+        margin-bottom: 0.5rem !important;
+    }
+
+    .project-meta-tags {
+        order: 2 !important; /* Drops the pink tags right below the title */
+        margin-bottom: 1rem !important;
+    }
+
+    .project-tagline {
+        order: 3 !important; /* Keeps the body tagline paragraph at the very bottom */
+    }
+    
+    .award {
+        order: 0 !important; /* If an award badge exists, it stays at the absolute top */
+        margin-bottom: 1.5rem !important;
+    }
+}
+
+/* Ensure the body is a clean, modern off-white to make the colors pop */
+body {
+    background-color: #fcfbfa; 
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* The Traveling Primary Magic Blob */
+body::before {
+    content: "";
+    position: fixed;
+    top: -20%;
+    left: -20%;
+    width: 65vw;
+    height: 65vw;
+    /* We increase the opacity slightly so the yellows and pinks don't disappear on white */
+    background: radial-gradient(circle, rgba(224, 36, 98, 0.25) 0%, rgba(255, 107, 139, 0.12) 40%, rgba(255, 255, 255, 0) 70%);
+    filter: blur(90px);
+    z-index: -2;
+    pointer-events: none;
+    /* This forces the colors to blend intensely with the white canvas below it */
+    mix-blend-mode: multiply; 
+    animation: megaTravelOne 16s ease-in-out infinite alternate;
+}
+
+/* The Traveling Secondary Counter-Blob */
+body::after {
+    content: "";
+    position: fixed;
+    bottom: -25%;
+    right: -25%;
+    width: 75vw;
+    height: 75vw;
+    background: radial-gradient(circle, rgba(255, 180, 50, 0.22) 0%, rgba(255, 107, 139, 0.1) 45%, rgba(255, 255, 255, 0) 75%);
+    filter: blur(100px);
+    z-index: -2;
+    pointer-events: none;
+    mix-blend-mode: multiply;
+    animation: megaTravelTwo 20s ease-in-out infinite alternate;
+}
+
+/* Same smooth movement math, but optimized for light mode contrast color wheels */
+@keyframes megaTravelOne {
+    0% {
+        transform: translate(0, 0) scale(1);
+        filter: blur(90px) hue-rotate(0deg); 
+    }
+    50% {
+        transform: translate(40vw, 30vh) scale(1.2);
+        filter: blur(80px) hue-rotate(40deg); /* Blends your pink smoothly into soft lavender */
+    }
+    100% {
+        transform: translate(60vw, -10vh) scale(0.9);
+        filter: blur(100px) hue-rotate(110deg); /* Morphs cleanly into the tech yellow you wanted */
+    }
+}
+
+@keyframes megaTravelTwo {
+    0% {
+        transform: translate(0, 0) scale(1);
+        filter: blur(100px) hue-rotate(0deg);
+    }
+    50% {
+        transform: translate(-30vw, -35vh) scale(0.85);
+        filter: blur(90px) hue-rotate(-35deg);
+    }
+    100% {
+        transform: translate(-50vw, -15vh) scale(1.15);
+        filter: blur(110px) hue-rotate(90deg);
+    }
+}
+/* Target your main name heading */
+.hero-title {
+    margin-bottom: 0.25rem; /* Drastically reduces space below your name */
+}
+
+/* Target your creative technologist subtitle */
+.hero-subtitle {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #444444; /* Darkens it slightly for better readability */
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 2rem; /* Creates clean spacing right before the button */
+}
+/* ========================================================
+   FORCE META CARDS BERRY PINK (PASTE AT THE ABSOLUTE BOTTOM)
+   ======================================================== */
+.meta-card, 
+.project-aims-card,
+aside .meta-card {
+    background: #3b1e27 !important;         /* Direct berry pink hex */
+    background-color: #3b1e27 !important;   /* Force background property */
+    padding: 2rem !important;
+    border-radius: 16px !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+    display: block !important;
+}
+
+/* Ensure the main title inside the card is crisp white */
+.meta-card h3 {
+    font-size: 1.4rem !important;
+    color: #ffffff !important;
+    margin-bottom: 1.5rem !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    padding-bottom: 0.5rem !important;
+}
+
+/* Ensure subheaders (Role, Timeline) use your bright pink accent */
+.meta-item h4 {
+    font-size: 0.85rem !important;
+    text-transform: uppercase !important;
+    color: #f8387e !important;             /* Your bright pink accent hex */
+    letter-spacing: 1px !important;
+    margin-bottom: 0.25rem !important;
+}
+
+/* Ensure description paragraph text is a readable light grey */
+.meta-item p,
+.aim-item p {
+    font-size: 1rem !important;
+    color: #e5e7eb !important;             /* Crisp light grey text color */
+}
+
+/* Ensure project aims numbering stands out */
+.aim-number {
+    color: #f8387e !important;
+    font-weight: 700 !important;
+}
+
+/* Placed at the very bottom of styles.css to ensure it overrides other rules */
+header.hero h1.indexpg {
+  font-size: 3.8rem !important; /* The !important tag breaks through any existing conflicts */
+  font-family: 'Montserrat', sans-serif !important;
+  font-weight: 700 !important;
+  line-height: 1.2 !important;
+}
+/* ==========================================================================
+   FORCE SIDE-BY-SIDE STRUCTURAL OVERRIDE
+   ========================================================================== */
+
+/* 1. Reset the grid frame to lock down the column boundaries */
+.case-study-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 360px !important; /* Left track scales, right track stays fixed at 360px */
+    gap: 3.5rem !important;                       /* Spacing gap between text and details box */
+    align-items: start !important;                /* Aligns both blocks precisely at the top edge */
+    width: 100% !important;
+}
+
+/* 2. Lock your technical challenge text block entirely into column 1 */
+.case-study-main {
+    grid-column: 1 !important;
+    width: 100% !important;
+}
+
+/* 3. Lock your details sidebar and card entirely into column 2 */
+.case-study-sidebar {
+    grid-column: 2 !important;
+    position: sticky !important;
+    top: 90px !important; /* Smoothly pins your box to the screen viewport on scroll */
+    width: 100% !important;
+}
+
+/* 4. Keeps your mobile responsive layouts intact for screens smaller than 850px */
+@media (max-width: 850px) {
+    .case-study-grid {
+        grid-template-columns: 1fr !important;
+        gap: 2.5rem !important;
+    }
+    .case-study-main,
+    .case-study-sidebar {
+        grid-column: 1 !important; /* Safely stacks the boxes vertically on mobile viewports */
+    }
+    .case-study-sidebar {
+        position: relative !important;
+        top: 0 !important;
+    }
+}
+
+/* ==========================================================================
+   HORIZONTAL GALLERY SCROLLBAR RESTORATION
+   ========================================================================== */
+
+/* 1. Force the row to stay on a single line and enable horizontal scrolling */
+.horizontal-scroll-gallery {
+    display: flex !important;
+    flex-direction: row !important;
+    overflow-x: auto !important; /* Re-enables the horizontal scroll tracking */
+    overflow-y: hidden !important;
+    gap: 2.5rem !important; /* Generous breathing room between your figures */
+    padding: 2rem 0 3rem 0 !important; /* Extra bottom padding so the scrollbar doesn't clip your captions */
+    width: 100% !important;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch; /* Butter-smooth scrolling on mobile trackpads */
+}
+
+/* 2. Stop the cards from shrinking and lock their large sizes back in */
+.gallery-card {
+    flex: 0 0 420px !important; /* FORCES cards to stay exactly 420px wide without squishing */
+    display: flex;
+    flex-direction: column;
+}
+
+/* 3. Ensure your images scale nicely inside their new large wrappers */
+.gallery-image-wrapper {
+    width: 100%;
+    height: 320px; /* Restores the large visual impact of your project assets */
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   CUSTOM PINK SCROLLBAR STYLING
+   ========================================================================== */
+
+/* 4. Define the width and height of the scrollbar track */
+.horizontal-scroll-gallery::-webkit-scrollbar {
+    height: 8px; /* Sleek, modern thin scrollbar height */
+}
+
+/* 5. The background runway track of the scrollbar */
+.horizontal-scroll-gallery::-webkit-scrollbar-track {
+    background: rgba(59, 30, 39, 0.1); /* Subtle dark berry translucent runway */
+    border-radius: 10px;
+}
+
+/* 6. The interactive draggable handle (Your Vivid Pink Accent) */
+.horizontal-scroll-gallery::-webkit-scrollbar-thumb {
+    background: #f8387e !important; /* Your exact vivid pink theme accent color */
+    border-radius: 10px;
+    transition: background 0.2s ease;
+}
+
+/* 7. Brightens the pink bar slightly when the user points at it */
+.horizontal-scroll-gallery::-webkit-scrollbar-thumb:hover {
+    background: #ff5596 !important;
+}
+
+/* ==========================================================================
+   UNIVERSAL ROOT TYPOGRAPHY SCALE (ALL PAGES)
+   ========================================================================== */
+
+html {
+    font-size: 112.5% !important; /* Forces the global browser base from 16px to 18px */
+}
+
+/* 📱 Mobile Responsive Overrides (For Screens 768px wide and below) */
+@media (max-width: 768px) {
+  
+  /* 1. Ensure the overall document scrolls naturally */
+  body, html {
+    height: auto !important;
+    overflow-y: auto !important;
+  }
+
+  /* 2. Fix the Hero Container layout and allow it to expand with text */
+  header.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+    height: auto !important;        /* Deletes desktop fixed heights */
+    min-height: auto !important;    /* Prevents pixel constraint bugs */
+    padding: 40px 20px !important;  /* Gives breathing room on the left/right/bottom */
+    margin: 0 auto !important;
+    position: relative !important;   /* Keeps it in the standard layout flow */
+  }
+
+  /* 3. Give the manifesto paragraph comfortable width on mobile */
+  header.hero .manifesto {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 24px !important;
+    line-height: 1.6 !important;
+  }
+
+  /* 4. Style the links container pill to flex nicely on phone widths */
+  header.hero .contact-tab-capsule {
+    display: inline-flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: auto !important;
+    padding: 10px 16px !important;
+    margin-bottom: 30px !important; /* Forces the pill above the button */
+  }
+
+  /* 5. Force the pink "View My Work" button down naturally */
+  header.hero .btn {
+    display: inline-block !important;
+    position: relative !important;
+    margin-top: 10px !important;
+    margin-bottom: 40px !important; /* 🌟 Creates space above the Industry section */
+    width: auto !important;
+  }
+
+  /* 6. Push the Projects section down so it never hits the button */
+  section#projects.project-section {
+    position: relative !important;
+    margin-top: 50px !important;   /* Explicit clearing space from the hero section */
+    padding: 40px 20px !important;
+    clear: both !important;
+  }
+
+  /* 7. Drop the projects grid to a single vertical column on mobile */
+  section#projects.project-section .grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 30px !important;
+  }
+
+  /* 8. Make sure card images scale nicely without breaking layout aspects */
+  section#projects.project-section .card-image {
+    width: 100% !important;
+    height: 220px !important;
+    object-fit: cover !important; /* Crops image cleanly without distortion */
+  }
+}
+
+/* 📱 Mobile Overlap Fix — Slider Only */
+@media (max-width: 768px) {
+
+  /* 1. Force the title to stay completely visible below the media block */
+  .square-content h2 {
+    position: relative !important;
+    display: block !important;
+    top: 0 !important;
+    margin-top: 30px !important;    /* 🌟 The core fix: forces title down to clear the image */
+    margin-bottom: 15px !important; /* Spacing before the award card starts */
+    height: auto !important;
+    line-height: 1.3 !important;
+  }
+
+  /* 2. Prevent the pink award tab from sliding upward into your text space */
+  .square-content p.award {
+    position: relative !important;
+    top: 0 !important;
+    transform: none !important;     /* Defeats any desktop styles sliding it up */
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+  }
+}

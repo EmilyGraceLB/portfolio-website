@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balcony Bound | Emily Blewitt Portfolio</title>
+    
+    <!-- Link to your shared global stylesheet -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+
+    <!-- Shared Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Karla:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="detail-page">
+
+    <!-- Fixed Sub-Page Navigation Bar -->
+     <nav>
+        <div class="logo"><a id="portfolio-text" href="index.html">EMILY BLEWITT</a></div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Main Document Wrapper -->
+    <main class="case-study-container">
+        
+        <!-- Project Hero Header -->
+<header class="case-study-header">
+    <p class="award">
+        <span class="award-icon">🏆</span> 
+        Winner: Audience Favourite — Interactive Media Showcase 2026
+    </p>
+    <p class="project-meta-tags">Unity — SteamVR — Blender
+    </p>
+    <header class="case-study-header">
+</header>
+
+<h1>Balcony Bound</h1>
+            
+    <p class="project-tagline">An immersive exploration of unique interactions in a sandbox cosy-style virtual reality environment.</p>
+</header>
+    <section class="case-study-hero-media">
+        <img src="images/balconybound.png" alt="Balcony Bound Gameplay" class="case-study-img">
+    </section>
+
+    <!-- Technical Content Grid Split -->
+    <section class="case-study-grid">
+            
+            <!-- Left Side: Technical Overview & Post-Mortem -->
+    <div class="case-study-main">
+        <h2>Project Overview</h2>
+        <p>Balcony Bound takes inspiration from EarthBound (Nintendo, 1994) in its title, presenting the feeling of being on track toward a cozy safe haven. This experience takes place on a balcony overlooking a quiet town, where paper planes pass by in the wind. The player is able to explore the balcony and make their own paper planes from the paper stacks on the tables, folding their memories to add to the space. 
+</p>
+
+        <h2>The Technical Challenges & Solutions</h2>
+    <div class="challenge-block">
+        <h3>Hurdle 1: Visual Consistency Across Dynamic Lighting</h3>
+            <p><strong>The Problem:</strong>  Turning off the primary fairy light system caused the cosy balcony environment to look completely flat, pitch black, and visually unappealing in unlit modes.</p>
+            <p><strong>The Solution:</strong> Developed a custom reflective material for the balcony glass doors with its shader emission property mapped directly to the skybox glow. This created a subtle, natural fallback light source that preserved the scene's depth and warmth whether the main lights were toggled on or off.</p>
+        </div>
+
+    <div class="challenge-block">
+        <h3>Hurdle 2: C# Script Architecture</h3>
+            <p><strong>The Problem:</strong> Attempting to handle object instantiation, spatial audio injection, and playback timers inside a single script became highly cluttered [1] and prone to performance bugs.</p>
+            <p><strong>The Solution:</strong> Decoupled the technical architecture into two separate scripts. Created a dedicated spawnPlane script to exclusively manage physics instantiation (Instantiate()), and a secondary modular prefab script to manage audio variables, volume control, and a 5-second maximum clip timer.</p>
+        </div>
+    </div>
+
+    <!-- Right Side: Sticky Meta Specification Panel -->
+            <aside class="case-study-sidebar">
+                <div class="meta-card">
+                    <h3>Project Details</h3>
+                    
+                    <div class="meta-item">
+                        <h4>Role</h4>
+                        <p>Creative Technologist, Developer</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p>2 Months (2026)</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Engine & Core SDKs</h4>
+                        <p>Unity 2022.3 LTS, SteamVR Interaction Toolkit</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>3D Production</h4>
+                        <p>Blender</p>
+                    </div>
+                    
+                </div>
+
+             <div class="meta-card project-aims-card">
+        <h3>Project Aims</h3>
+        
+        <div class="aim-item">
+            <span class="aim-number">01</span>
+            <div>
+                <h4>Zero-Friction Immersion</h4>
+                <p>Eradicate traditional 2D HUD menus. Replace them with 100% physics-based spatial interfaces that preserve the virtual illusion.</p>
+            </div>
+        </div>
+
+        <div class="aim-item">
+            <span class="aim-number">02</span>
+            <div>
+                <h4>Reduce Cognitive Load</h4>
+                <p>Design a natural interaction architecture where first-time VR users require zero training or onboarding tutorials.</p>
+            </div>
+        </div>
+
+        <div class="aim-item">
+            <span class="aim-number">03</span>
+            <div>
+                <h4>Visual Feedback and Participation</h4>
+                <p>Design a successful sandbox environment that encourages interaction through visual ques by mimicking standard real-life actions such as waving the sparkler or watering the plants.</p>
+            </div>
+        </div>
+    </div>
+
+    </aside>
+    </section>
+<section class="portfolio-carousel-container">
+    <h2>Asset Development Gallery</h2>
+    <p class="carousel-intro">Swipe through the project assets. Hover over any card to reveal the technical logic, implementation details, and project necessity.</p>
+    
+    <div class="horizontal-scroll-gallery">
+        
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/paperplaneanim.png" alt="Blender Modeling Process">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Establishes the low-poly "cozy game" aesthetic matching my inspirations like <em>A Short Hike</em> and the <em>Animal Crossing</em> series.</p>
+                        <h4>What it does:</h4>
+                        <p>Adds custom 3D assets with a pre-established animation loop ready to be imported into Unity.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 1. Paper plane geometry creation in Blender.</p>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/spawnplanescript.png" alt="Unity spawnPlane Script Screenshot">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Manages the spawning of new plane prefabs to populate the scene and offer more objects for the player to interact with.</p>
+                        <h4>What it does:</h4>
+                        <p>Utilizes Unity's <code>Instantiate()</code> function inside the <code>On Pick Up()</code> event listener to generate a new plane prefab right as the paper stack is gripped.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 2. C# script architecture for plane instantiation.</p>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/watercanatwork.png" alt="Photoshop Particle Shader Design">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Standard sharp particle circles looked harsh and broke the soft visual design of the environment.</p>
+                        <h4>What it does:</h4>
+                        <p>Applies the custom made texture from Adobe Photoshop to the Unity in-built particle system, allowing for a more visually cohesive end result that doesn't contrast to the preestablized visual identity.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 3. Custom texture for fluid particle systems.</p>
+        </div>
+
+    </div>
+</section>
+        <!-- </section> -->
+                <section class="ux-case-study-fullwidth">
+            <h2>UX Architecture & User Research</h2>
+            <p class="ux-intro">Designing for Virtual Reality demanded moving away from flat interfaces. The target user group required low cognitive load interfaces that mirrored real-world physical intuitions.</p>
+
+            <div class="ux-process-grid">
+                <div class="ux-step">
+                    <h3>1. Spatial Ergonomics</h3>
+                    <p>Calculated optimal user interaction zones based on natural arm-reach radiuses. I aimed to position UI panels within a 30 to 45-degree comfortable viewing cone to limit neck fatigue.</p>
+                </div>
+
+                <div class="ux-step">
+                    <h3>2. Affordance & Feedback Loops</h3>
+                    <p>Because spatial interactions lack physical textures, I mapped multi-sensory feedback loops. Interactive objects show an outline on hand proximity and some play audio on touch.</p>
+                </div>
+
+                <div class="ux-step">
+                    <h3>3. User Testing Insights</h3>
+                    <p>Observational telemetry data showed that initial testers tried to swipe virtual items rather than grab them. We altered item geometry to include pronounced handles, decreasing task completion times by nearly 40%.</p>
+                </div>
+            </div>
+        </section>
+        <section class="reflection-section-fullwidth">
+            <h2>Reflection & Further Development</h2>
+            <p class="reflection-intro">An honest evaluation reveals the technical hurdles and design limits of the current prototype alongside a roadmap to fully realize our project aims.</p>
+
+            <div class="reflection-grid">
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 01</span>
+                        <h3>Zero-Friction Immersion</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong> While eliminating 2D HUD menus kept the user visually immersed, relying purely on physics-based spatial interfaces introduced unintended physical friction; without subtle tactile resistance, menus feel "floaty" and less predictable.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> Implement <strong>variable haptic feedback loops</strong> mapped directly to physics actions. Generating a distinct "snap" sensation in the controllers when a player's hand intersects a spatial UI element provides the missing tactile confirmation required for reliable interaction.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 02</span>
+                        <h3>Reduce Cognitive Load</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong> User testing proved that reducing cognitive load goes beyond omitting tutorials. First-time VR users still faced a split-second of confusion trying to swipe certain items before realizing they needed to grab them.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> Perform a systematic overhaul of asset <strong>visual affordances</strong> across the entire sandbox, using highly pronounced handles and contextual shader glows that instantly signal how an object is manipulated to drive task-completion speeds even higher.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 03</span>
+                        <h3>Feedback & Participation</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong> The sandbox successfully encourages standard real-life actions (like watering plants or waving sparklers), but the loop feels static because the environment doesn't meaningfully react back to the user over time.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> Introduce <strong>environmental states</strong>. Watering plants should trigger a script that dynamically scales up the asset's geometry over time, turning temporary particle loops into living feedback systems.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2026 Emi. Built with caffeine and code.</p>
+    </footer>
+    <script src="mouseinteraction.js"></script>
+</body>
+</html>

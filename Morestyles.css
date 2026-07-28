@@ -1,0 +1,82 @@
+/* ==========================================================================
+   1. DESIGN SYSTEM VARIABLES
+   ========================================================================== */
+:root {
+  /* Color Palette */
+  --bg-primary: #FAF9F6;      /* Off-White Base (60%) */
+  --text-main: #111827;       /* Deep Charcoal Text (30%) */
+  --text-muted: #4B5563;      /* Slate Gray for secondary text */
+  --accent-color: #4F46E5;    /* Deep Tech Violet Accent (10%) */
+  --accent-hover: #4338CA;    /* Darker Violet for hover interactions */
+  
+  /* Typography Stack */
+  --font-headings: 'Montserrat', sans-serif;
+  --font-body: 'Karla', sans-serif;
+}
+
+/* ==========================================================================
+   2. GLOBAL & RESET STYLES
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-body);
+  font-size: 1.125rem; /* 18px - Excellent for scannable UX reading */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==========================================================================
+   3. TYPOGRAPHY HIERARCHY (Montserrat)
+   ========================================================================== */
+h1, h2, h3, h4 {
+  font-family: var(--font-headings);
+  font-weight: 700; /* Bold weight for striking UX headers */
+  line-height: 1.2;
+  letter-spacing: -0.02em; /* Tighter tracking looks premium at large sizes */
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }      /* Main Landing Hero Title */
+h2 { font-size: 2.25rem; }    /* Project Case Study Titles */
+h3 { font-size: 1.5rem; }     /* Section Sub-headings */
+
+p {
+  margin-bottom: 1.5rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   4. INTERACTIVE ACCENT ELEMENTS (UX CTA Buttons)
+   ========================================================================== */
+a {
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+.btn-primary {
+  display: inline-block;
+  font-family: var(--font-headings);
+  font-weight: 600;
+  background-color: var(--accent-color);
+  color: #FFFFFF;
+  padding: 0.8rem 1.75rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  color: #FFFFFF;
+}

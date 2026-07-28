@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Emily Blewitt</title>
+    
+    <link href="styles.css" type="text/css" rel="stylesheet">
+
+    <!-- Google Fonts Link for Montserrat and Karla -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body class="projects-page">
+    <nav>
+        <div class="logo"><a id="portfolio-text" href="index.html">EMILY BLEWITT</a></div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+
+        </ul>
+    </nav>
+
+
+    <main class="fullscreen-slider-container">
+    
+    <!-- Navigation Arrow Buttons -->
+    <button class="slide-arrow prev-arrow" onclick="moveSlide(-1)">❮</button>
+    <button class="slide-arrow next-arrow" onclick="moveSlide(1)">❯</button>
+
+    <!-- Slider Track for Full Screen Squares -->
+    <div class="slider-track">
+        
+        <!-- Slide 0: Balcony Bound -->
+        <div class="project-square active" data-index="0">
+            <div class="square-media">
+                <img class="slider-image" src="images/balconybound.png">
+            </div>
+            <div class="square-content">
+                <h2>Balcony Bound</h2>
+                <p class="award"><span class="award-icon">✨</span> 
+                        Winner: Audience Favourite — Interactive Media Showcase 2026</p>
+                <p class="tech-stack">Unity — SteamVR — Blender</p>
+                <p class="summary">An immersive exploration of unique interactions in a sandbox cosy-style virtual reality environment.</p>
+                <a href="balcony-bound.html?from=0" class="btn" id="bbbtn">View Details</a>
+            </div>
+        </div>
+
+            <!-- Slide 2: Spirit Gardens -->
+        <div class="project-square" data-index="2">
+            <div class="square-media">
+                <img class="slider-image" src="images/start.png">
+            </div>
+            <div class="square-content">
+                <h2>Spirit Gardens</h2>
+                <p class="award"><span class="award-icon">✨</span> 
+                Winner: Spotlight Award — Interactive Media Showcase 2024</p>
+                <p class="tech-stack">JavaScript — Procreate — p5.js</p>
+                <p class="summary">A pixel-art maze game with custom visuals and assets.</p>
+                <a href="sg.html?from=2" class="btn" id="sgbtn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Slide 1: No Graves for Monsters -->
+        <div class="project-square" data-index="1">
+            <div class="square-media">
+                <img class="slider-image" src="images/ngfm.png">
+            </div>
+            <div class="square-content">
+                <h2>No Graves for Monsters</h2>
+                <p class="tech-stack">Unity — Blender — C#</p>
+                <p class="summary">A stylized action title focusing on robust gameplay architectures and modular asset pipelines.</p>
+                <a href="ngfm.html?from=1" class="btn" id="ngfmbtn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Slide 3: Barely Hall -->
+        <div class="project-square" data-index="3">
+            <div class="square-media">
+                <img class="slider-image" src="images/barleyhallmp.png">
+            </div>
+            <div class="square-content">
+                <h2>Barley Hall - Training Website</h2>
+                <p class="tech-stack">Adobe UX — Adobe After Effects — Adobe Photoshop - Adobe Premiere Pro</p>
+                <p class="summary">A prototype demonstration intended use of interactive traingin resource for volunteers at Barley Hall, York.</p>
+                <a href="bh.html?from=3" class="btn" id="bhbtn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Slide 4: Surf Safe -->
+        <!-- <div class="project-square" data-index="4">
+            <div class="square-media">
+                <img class="slider-image" src="images/SurfSafe.png">
+            </div>
+            <div class="square-content">
+                <h2>Surf Safe</h2>
+                <p class="tech-stack">Adobe XD — Adobe Photoshop — CapCut</p>
+                <p class="summary">An interactive media prototype of a mobile app that provides users with safety information regarding different coastlines.</p>
+                <a href="surfsafe.html?from=4" class="btn" id="surfbtn">View Details</a>
+            </div>
+        </div> -->
+
+        <!-- Slide 5: Mrs Sherlock Holmes-->
+        <!-- <div class="project-square" data-index="5">
+            <div class="square-media">
+                <img class="slider-image" src="images/MSDPHD.png">
+            </div>
+            <div class="square-content">
+                <h2>Mrs Sherlock Holmes - Imminent XR</h2>
+                <p class="tech-stack">Unreal Engine — Blender — Adobe Photoshop</p>
+                <p class="summary">Assisted on a project exploring the use of virutal production technologies in creating unique theatre experiences.</p>
+                <a href="MSH.html?from=5" class="btn" id="mshbtn">View Details</a>
+            </div>
+        </div> -->
+
+        <!-- Slide 6: Xtra reality and costar live lab -->
+        <div class="project-square" data-index="6">
+            <div class="square-media">
+                <img class="slider-image" src="images/costarxtrareality.png">
+            </div>
+            <div class="square-content">
+                <h2>CoSTAR Live Lab - Motion Capture with Xtra Reality</h2>
+                <p class="tech-stack">Unreal Engine — Meta Humans — Vicon Motion Capture</p>
+                <p class="summary">Assisted on a project exploring the use of meta humans for creating and providing assets for mixed reality walkthrough experiences.</p>
+                <a href="csXR.html?from=6" class="btn" id="csXRbtn">View Details</a>
+            </div>
+        </div>
+
+        <!-- Slide 7: CoSTAR Live Lab - Marnie Glum -->
+        <div class="project-square" data-index="7">
+            <div class="square-media">
+                <img class="slider-image" src="images/costarmarnieglum.jpg">
+            </div>
+            <div class="square-content">
+                <h2>CoSTAR Live Lab - Marnie Glum</h2>
+                <p class="tech-stack">Unreal Engine — OBS — Meta Humans</p>
+                <p class="summary">Assisted on a project exploring remote connectivity of live performers being projected into digital spaces together.</p>
+                <a href="csMG.html?from=7" class="btn" id="csMGbtn">View Details</a>
+            </div>
+        </div>
+
+    </div>
+</main>
+    <!-- ... Your existing project slides ... -->
+
+<!-- NEW: Independent Bottom Utility Bar -->
+<div class="grid-utility-bar">
+    <button id="toggleViewBtn" class="utility-toggle-btn" onclick="toggleLayoutView()">
+        <span class="toggle-icon">⚏</span> Toggle Grid View
+    </button>
+</div>
+
+<script src="slider.js"></script>
+
+
+
+    <!-- Script to handle URL parameter remembering & layout toggling -->
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const savedSlideIndex = urlParams.get('slide');
+            
+            if (savedSlideIndex !== null && typeof window.showSlide === 'function') {
+                window.showSlide(parseInt(savedSlideIndex));
+            } else if (savedSlideIndex !== null && typeof window.moveSlide === 'function') {
+                let currentActive = 0;
+                let target = parseInt(savedSlideIndex);
+                moveSlide(target - currentActive);
+            }
+        });
+
+    </script>
+
+
+    <script src="slider.js"></script>
+    <script src="buttons.js"></script>
+    <script src="mouseinteraction.js"></script>
+    <script src="toggleview.js"></script>
+    <!-- <script src="rememberslide.js"></script> -->
+</body>
+</html>

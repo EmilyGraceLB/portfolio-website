@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balcony Bound | Emily Blewitt Portfolio</title>
+    
+    <!-- Link to your shared global stylesheet -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+
+    <!-- Shared Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Karla:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="detail-page">
+
+    <!-- Fixed Sub-Page Navigation Bar -->
+     <nav>
+        <div class="logo"><a id="portfolio-text" href="index.html">EMILY BLEWITT</a></div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Main Document Wrapper -->
+    <main class="case-study-container">
+        
+        <!-- Project Hero Header -->
+<header class="case-study-header">
+    <p class="award">
+        <span class="award-icon">🏆</span> 
+        Winner: Audience Favourite — Interactive Media Showcase 2024
+    </p>
+    <p class="project-meta-tags">p5.js — Vanilla JavaScript — Procreate
+    </p>
+    <header class="case-study-header">
+</header>
+
+<h1>Spirit Gardens</h1>
+            
+    <p class="project-tagline">A pixel art top-down maze game with custom pixel art assets.</p>
+</header>
+    <section class="case-study-hero-media">
+        <img src="images/start.png" alt="Spirit Gardens Gameplay" class="case-study-img">
+    </section>
+
+    <!-- Technical Content Grid Split -->
+    <section class="case-study-grid">
+            
+            <!-- Left Side: Technical Overview & Post-Mortem -->
+    <div class="case-study-main">
+        <h2>Project Overview</h2>
+        <p>Spirit Gardens follows the story of a young girl who discovers her home has become overrun with forest spirits. To discover the reason why the spirits are now afraid of their home, the player must adventure through the forest maze in search of answers. This game uses a top down format and takes inspiration from early entries in the Pokémon series in its pixel art style.  
+</p>
+
+        <h2>The Technical Challenges & Solutions</h2>
+    <div class="challenge-block">
+        <h3>Hurdle 1: Preventing Wall Clipping</h3>
+            <p><strong>The Problem:</strong> When the environment shifted based on a state boolean, the player would clip through walls. This happened because player movement was calculated using outdated collision maps before the game engine finished updating the active maze layout for that state.</p>
+            <p><strong>The Solution:</strong> I re-ordered the execution loop so that the state boolean resolves and updates the active environment boundaries first. This ensures that player movement and collision checks are always calculated against the correct, active wall layout.</p>
+        </div>
+
+    <div class="challenge-block">
+        <h3>Hurdle 2: Script Architecture</h3>
+            <p><strong>The Problem:</strong> The game required careful structure to guarentee the functionality would perform as expected. Before implementing a more rigid structure and organizing the script, it was difficult to navigate and accurately detect problems.</p>
+            <p><strong>The Solution:</strong> Each section was managed in external scripts, providng a simpler more efficent solution and clean structure which imrpoved perfomance and management of the development.</p>
+        </div>
+    </div>
+
+    <!-- Right Side: Sticky Meta Specification Panel -->
+            <aside class="case-study-sidebar">
+                <div class="meta-card">
+                    <h3>Project Details</h3>
+                    
+                    <div class="meta-item">
+                        <h4>Role</h4>
+                        <p>Developer, Artist</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p>1 Month (2024)</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Engine & Core SDKs</h4>
+                        <p>Vanilla JavaScript, p5.js</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Asset Creation</h4>
+                        <p>Procreate</p>
+                    </div>
+                    
+                </div>
+
+             <div class="meta-card project-aims-card">
+        <h3>Project Aims</h3>
+        
+        <div class="aim-item">
+            <span class="aim-number">01</span>
+            <div>
+                <h4>Atmospheric Progression</h4>
+                <p>Implement and provide a unique design for each level in the game to distinguish each new puzzle.</p>
+            </div>
+        </div>
+
+        <div class="aim-item">
+            <span class="aim-number">02</span>
+            <div>
+                <h4>Cross Browser Compatibility</h4>
+                <p>Design a lightweight web application that is compatible across all modern browsers without the need for external plugins.</p>
+            </div>
+        </div>
+
+        <div class="aim-item">
+            <span class="aim-number">03</span>
+            <div>
+                <h4>Intuitive Interaction</h4>
+                <p>Implement responsive keyboard controls paired with accurate collision detection to ensure smooth navigation and player movement throughout.
+</p>
+            </div>
+        </div>
+    </div>
+
+    </aside>
+    </section>
+<section class="portfolio-carousel-container">
+    <h2>Asset Development Gallery</h2>
+    <p class="carousel-intro">Swipe through the project assets. Hover over any card to reveal the technical logic, implementation details, and project necessity.</p>
+    
+    <div class="horizontal-scroll-gallery">
+        
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/final stage.png" alt="Blender Modeling Process">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Darker tones provide strong visual contrast to earlier levels.</p>
+                        <h4>What it does:</h4>
+                        <p>Visually communicates a change in tone and player expectations while remaining cohesive with the previously used art style.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 1. Final environment design.</p>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/mazeinstancesetup.png" alt="Unity spawnPlane Script Screenshot">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Creates instances of each maze the player will encounter. as the player moves between environments a later Boolean statement is called to populate the maze in accordance with the backroad image.</p>
+                        <h4>What it does:</h4>
+                        <p>Supports the structure of the game and ensures the maze collisions match the visuals the player experiences at any given point in the game.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 2. Establishing multiple mazes to populate during game progression.</p>
+        </div>
+
+        <div class="gallery-card">
+            <div class="gallery-image-wrapper">
+                <img src="images/preloadfunction.png" alt="Photoshop Particle Shader Design">
+                <div class="image-hover-overlay">
+                    <div class="overlay-text">
+                        <h4>Why it’s necessary:</h4>
+                        <p>Preloads all custom assets before the project is run.</p>
+                        <h4>What it does:</h4>
+                        <p>Prevents 'lag' and jitters during transitions when new assets are called to be drawn within the canvas.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="card-caption">Fig 3. Utilizing the preload() function.</p>
+        </div>
+
+    </div>
+</section>
+        <!-- </section> -->
+                <section class="ux-case-study-fullwidth">
+            <h2>UX Architecture & User Research</h2>
+            <p class="ux-intro">Designing for a browser-based canvas demanded moving away from complex player interfaces. The target user group required low cognitive load interfaces that mirrored retro arcade-style physical intuitions.</p>
+
+            <div class="ux-process-grid">
+                <div class="ux-step">
+                    <h3>1. Input Ergonomics</h3>
+                    <p>Designing a browser-based keyboard layout demanded moving away from complex multi-key inputs. The target user group required low cognitive load controls that mirrored classic arcade layouts. We mapped movement to standard WASD/Arrow vectors, restricting the physical gameplay zone to a natural, comfortable two-hand rest position.</p>
+                </div>
+
+                <div class="ux-step">
+                    <h3>2. Visual Affordance & Level Progression</h3>
+                    <p>To ensure clear progression feedback as the player advances through sequential mazes, I hand-drew distinct asset sets using contrasting color palettes for each level. By mapping unique color profiles to each maze state, the interface provides immediate visual affordance—instantly signaling a successful level transition and giving the player a clear psychological sense of progression.</p>
+                </div>
+
+                <div class="ux-step">
+                    <h3>3. User Testing Insights</h3>
+                    <p>Observational user testing revealed significant friction regarding navigation and spatial awareness within the hand-drawn layouts. Because the custom art lacked rigid grid lines, players frequently misjudged wall boundaries and struggled to locate entry/exit thresholds. This insight highlighted the critical need for explicit visual anchors, proving that stylized aesthetic choices must always be balanced with clear geometric signposting to prevent player frustration.</p>
+                </div>
+            </div>
+        </section>
+        <section class="reflection-section-fullwidth">
+            <h2>Reflection & Further Development</h2>
+            <p class="reflection-intro">An honest evaluation reveals the technical hurdles and design limits of the current prototype alongside a roadmap to fully realize our project aims.</p>
+
+            <div class="reflection-grid">
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 01</span>
+                        <h3>Atmospheric Progression</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong>Visual consistency within the art style was achieved however, there was no variety in audio features and the soundscape of each level.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> Break down each level/tier of the forest and introduce different sounds to build a strong auditary profile for each area.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 02</span>
+                        <h3>Cross Browser Compatibility</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong> This was achieved at a basic level however further research and optimization must be done to ensure identical frame rates and maximum performance.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> Currently the game runs in a set canvas environment which could be furhter adapted to scale responsively and account for different window sizes rather than forcing a fixed screen view of the gameplay that restricts the players ability to adapt the game to their screen layout.</p>
+                    </div>
+                </div>
+
+                <div class="reflection-card">
+                    <div class="reflection-meta">
+                        <span class="aim-reference">Aim 03</span>
+                        <h3>Intuitive Interaction</h3>
+                    </div>
+                    <div class="reflection-body">
+                        <p class="status-critique"><strong>The Reality Check:</strong> The game operates successfully managing the player controls and behaviour through a seperate script. The controls follow a classic arrowkey set up for movement and access to new areas happens automaticlaly through collision with defined 'portals' and entrance locations for new mazes.</p>
+                        <p class="future-fix"><strong>Further Development:</strong> One key press currently results in a singular step forward by a defined pixel rate and the game is currently unresponsive to holding down the arrow key to move continuosly in a singulay direction which should be revised to avoid frustrating the player.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <footer>
+        <p>&copy; 2026 Emi. Built with caffeine and code.</p>
+    </footer>
+    <script src="mouseinteraction.js"></script>
+</body>
+</html>

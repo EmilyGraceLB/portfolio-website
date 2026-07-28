@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mrs Sherlock Holmes | Emily Blewitt Portfolio</title>
+    
+    <!-- Link to your shared global stylesheet -->
+    <link href="styles.css" type="text/css" rel="stylesheet">
+
+    <!-- Shared Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Karla:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="detail-page">
+
+    <!-- Fixed Sub-Page Navigation Bar -->
+    <nav>
+        <div class="logo"><a id="portfolio-text" href="index.html">EMILY BLEWITT</a></div>
+        <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="project.html">Projects</a></li>
+
+        </ul>
+    </nav>
+
+    <!-- Main Document Wrapper -->
+    <main class="case-study-container">
+        
+        <!-- Project Hero Header -->
+        <header class="case-study-header">
+
+            <p class="project-meta-tags">Unity — SteamVR — Blender</p>
+            <header class="case-study-header">
+</header>
+
+            <h1>Mrs Sherlock Holmes - Imminent XR</h1>
+            
+            <p class="project-tagline">An exploration of virtual production technologies in enhancing traditional theatre perfomances.</p>
+        </header>
+
+        <!-- Giant Primary Gameplay Image/Video Frame -->
+        <section class="case-study-hero-media">
+            <img src="images/MSDPHD.png" alt="MSH Gameplay" class="case-study-img">
+        </section>
+
+        <!-- Technical Content Grid Split -->
+        <section class="case-study-grid">
+            
+            <!-- Left Side: Technical Overview & Post-Mortem -->
+            <div class="case-study-main">
+                <h2>Project Overview</h2>
+                <p>I created a 3D environment in Unreal Engine 5.2 for virtual production. The
+environment included a blender model of the Reichenbach Falls and was used to tell
+the story of Mr. Sherlock Holmes’ death from Mrs. Sherlock Holmes’ perspective.
+Footage recorded in the virtual production studio was then chroma keyed and placed
+in the Unreal project as a 2D plane. This was one of many sets that were used in experimenting how different virtual production technologies and workflows can contribute to modern demonstrations of theatre content.</p>
+
+                <h2>The Technical Challenges & Solutions</h2>
+                <div class="challenge-block">
+                    <h3>Hurdle 1: VR Frame Rate Optimization</h3>
+                    <p><strong>The Problem:</strong> Heavy asset geometry from high-fidelity 3D meshes caused sudden frame drops under SteamVR rendering passes, inducing mild motion sickness.</p>
+                    <p><strong>The Solution:</strong> Re-imported all environment assets back into Blender to aggressively decimate geometry loops, bake high-poly lighting data into static lightmaps, and utilize aggressive occlusion culling within Unity.</p>
+                </div>
+
+                <div class="challenge-block">
+                    <h3>Hurdle 2: Physics-Based Spatial Interaction</h3>
+                    <p><strong>The Problem:</strong> Standard Raycast interaction models felt detached and broke immersion during spatial menu selection routines.</p>
+                    <p><strong>The Solution:</strong> Implemented a completely proximity-based physical collision system utilizing Unity's Input System events and physical trigger volumes to make buttons physically depress when touched.</p>
+                </div>
+            </div>
+
+            <!-- Right Side: Sticky Meta Specification Panel -->
+            <aside class="case-study-sidebar">
+                <div class="meta-card">
+                    <h3>Project Details</h3>
+                    
+                    <div class="meta-item">
+                        <h4>Role</h4>
+                        <p>Creative Technologist, Developer</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Timeline</h4>
+                        <p>3 Months (2025)</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>Engine & Core SDKs</h4>
+                        <p>Unity 2022.3 LTS, SteamVR Interaction Toolkit</p>
+                    </div>
+
+                    <div class="meta-item">
+                        <h4>3D Production</h4>
+                        <p>Blender (Hard-Surface Modeling, Baking)</p>
+                    </div>
+                    
+                </div>
+            </aside>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Emi. Built with caffeine and code.</p>
+    </footer>
+
+</body>
+</html>
